@@ -1,0 +1,25 @@
+.activity-btn, .showMore {
+    margin: 5px;
+    border: 2px solid black;
+}
+
+.activity {
+    width: 200px;
+    margin: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+img {
+    border: 2px solid black;
+    max-width: 190px;
+    padding: 3px;
+}
+
+#gifBox {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    max-width: 100%;
+}
+
