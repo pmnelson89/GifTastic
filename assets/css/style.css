@@ -1,4 +1,31 @@
-.activity-btn, .showMore {
+.jumbotron {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-group {
+    margin: auto;
+    float: center;
+    width: 70%;
+    border: 1px solid black;
+    padding: 10px;
+    background: lightgray;
+    margin-bottom: 20px;
+}
+
+#input, #add {
+    margin: auto;
+}
+
+#input {
+    margin-bottom: 10px;
+}
+.header {
+    padding-top: none;
+    margin-top: none;
+}
+.activity-btn {
     margin: 5px;
     border: 2px solid black;
 }
