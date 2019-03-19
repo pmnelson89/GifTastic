@@ -16,12 +16,9 @@ function displayActivity() {
 
         var results = response.data;
 
-        console.log(results);
-
         for (var i = 0; i < limit; i++) {
            
             var activityDiv = $("<div class='activity'>");   
-            
             var activityImg = $("<img>");
     
             activityImg.attr({

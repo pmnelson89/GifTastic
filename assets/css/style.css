@@ -3,8 +3,6 @@
 }
 
 body {
-    /* background-image: url("../images/forrest.jpg");
-    background-size: cover; */
     background: lightblue;
 }
 
@@ -19,6 +17,7 @@ body {
 
 h1 {
     color: orangered;
+
     font-weight: bolder;
     text-shadow: -1px -1px 0 white,
     1px -1px 0 white,
@@ -36,6 +35,12 @@ h1 {
 
 .card {
     background: transparent;
+    text-align: center;
+    padding: 10px;
+}
+
+h4 {
+    margin: 10px;
 }
 
 .form-group {
