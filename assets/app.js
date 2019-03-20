@@ -100,6 +100,7 @@ $("#add").on("click", function(event) {
     newTopic();
 })
 
+//click to show gifs
 $(document).on("click", ".activity-btn", function(event) {
     event.preventDefault();
     limit = 10;
