@@ -41,6 +41,8 @@ function displayActivity(event) {
         method: "GET"
     }).then(function(response) {
 
+        console.log(response);
+
         addGif(response);
         var newButton = $("<div class='showTenMore'>");
         var showMore = $("<button class='btn btn-primary'>");
@@ -60,7 +62,8 @@ function addGif(response) {
     for (var i = 0; i < limit; i++) {
         var activityDiv = $("<div class='activity'>");
         var activityImg = $("<img>");
-        var rating = results[i].rating;  
+        var rating = results[i].rating; 
+        var download = $("<a href=" + results[i].images.original.url + "download> Download </a>"); 
         var p = $("<p>").text("Rating: " + rating);
 
         activityImg.attr({
@@ -73,6 +76,7 @@ function addGif(response) {
 
         activityDiv.append(activityImg);
         activityDiv.append(p);
+        activityDiv.append(download);
         $("#gifBox").append(activityDiv);
     }  
 }
@@ -96,9 +100,6 @@ $("#add").on("click", function(event) {
     newTopic();
 })
 
-//click topic to display gifs
-// $(document).on("click", ".activity-btn", displayActivity)
-
 $(document).on("click", ".activity-btn", function(event) {
     event.preventDefault();
     limit = 10;
@@ -115,20 +116,5 @@ $(document).on("click", "#showMoreBtn", function(event) {
 
 //click gif to play/pause
 $(document).on("click", ".gif", playGif);
-
-// $(document).on("click", ".gif", function(event) {
-//     event.preventDefault();
-//     // playGif();
-//     var state = $(this).attr("data-state");
-
-//     if (state === "still") {
-//         $(this).attr("src", $(this).attr("data-animate"));
-//         $(this).attr("data-state", "animate");
-//     } else {
-//         $(this).attr("src", $(this).attr("data-still"));
-//         $(this).attr("data-state", "still");
-//     }
-//     console.log(state);
-// })
 
 topicBtn();
