@@ -14,7 +14,9 @@ body {
     width: 100%;
     background-image: url("../images/mountain.jpg");
     background-size: cover;
-    border: 2px solid white;
+    border: 1px solid black;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 .card {
@@ -26,7 +28,7 @@ body {
 
 .activity-btn {
     margin: 5px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .form-group {
@@ -53,21 +55,20 @@ body {
     cursor: pointer;
 }
 
+.gif:hover {
+    border: 5px solid blue;
+}
+
 #header {
     color: orangered;
     font-weight: bolder;
-    text-shadow: -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
+    text-shadow: 3px 3px black;
+    
 }
 
 #subheader {
     color: white;
-    text-shadow: -2px -2px 0 black,
-    2px -2px 0 black,
-    -2px 2px 0  black,
-    2px 2px 0 black;
+    text-shadow: 2px 2px 0 black;
 }
 
 #click-instructions {
@@ -85,4 +86,8 @@ body {
     list-style: none;
     max-width: 100%;
     margin-bottom: 15%;
+}
+
+#add {
+    border: 1px solid black;
 }

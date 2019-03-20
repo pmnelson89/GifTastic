@@ -12,7 +12,7 @@ function topicBtn() {
     //loop through the array of activities
     for (var i = 0; i < topics.length; i++){
 
-        var btn = $("<button class='btn btn-success'>");
+        var btn = $("<button class='btn btn-primary'>");
         btn.addClass("activity-btn");
         btn.attr("activity-name", topics[i]);
         btn.text(topics[i]);
@@ -39,6 +39,8 @@ function displayActivity() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
+
+        console.log(response);
 
         //addGif(response);
 
