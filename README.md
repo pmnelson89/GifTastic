@@ -1,6 +1,6 @@
 # GifTastic
 
-This game uses jQuery to grab values from a form and create button for each value.  When the buttons are clicked, information is pulled from the giphy API and displayed on screen.
+This page uses jQuery to grab values from a form and create a button for each value.  When the buttons are clicked, information is pulled from the giphy API and displayed on screen.
 
 ## How to use
 * Enter a topic in the form.
