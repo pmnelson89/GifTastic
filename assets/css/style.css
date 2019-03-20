@@ -26,7 +26,7 @@ body {
     border: none;
 }
 
-.activity-btn {
+.btn-primary {
     margin: 5px;
     border: 1px solid black;
 }
@@ -55,7 +55,7 @@ body {
     cursor: pointer;
 }
 
-.gif:hover {
+.gif:hover, #showMoreBtn:hover {
     border: 5px solid blue;
 }
 
@@ -63,7 +63,6 @@ body {
     color: orangered;
     font-weight: bolder;
     text-shadow: 3px 3px black;
-    
 }
 
 #subheader {
@@ -88,6 +87,8 @@ body {
     margin-bottom: 15%;
 }
 
-#add {
-    border: 1px solid black;
+#showMoreBtn {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
 }

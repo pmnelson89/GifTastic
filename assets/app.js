@@ -29,10 +29,11 @@ function newTopic() {
 }
 
 //function to display gif
-function displayActivity() {
+function displayActivity(event) {
     
     $("#gifBox").empty();
-    var activityName = $(this).attr("activity-name");
+    $(".showTenMore").empty();
+    var activityName = $(event).attr("activity-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + activityName + "&api_key=" + APIkey + "&limit=" + limit;
     
     $.ajax({
@@ -40,89 +41,44 @@ function displayActivity() {
         method: "GET"
     }).then(function(response) {
 
-        console.log(response);
-
-        //addGif(response);
-
-        var results = response.data;
-    
-        for (var i = 0; i < limit; i++) {
-            var activityDiv = $("<div class='activity'>");
-            var activityImg = $("<img>");
-            var rating = results[i].rating;  
-            var p = $("<p>").text("Rating: " + rating);
-
-            activityImg.attr({
-                "src": results[i].images.original_still.url,
-                "data-still": results[i].images.original_still.url,
-                "data-animate": results[i].images.original.url,
-                "data-state": "still",
-                "class": "gif",
-            })
-
-            activityDiv.append(activityImg);
-            activityDiv.append(p);
-            $("#gifBox").append(activityDiv);
-        }  
+        addGif(response);
+        var newButton = $("<div class='showTenMore'>");
+        var showMore = $("<button class='btn btn-primary'>");
+            newButton.append(showMore);
+            showMore.attr("id", "showMoreBtn");
+            showMore.attr("activity-name", activityName);
+            showMore.text("Show 10 more gifs!");
+        $("#gifBox").append(showMore);
     });
 }
 
-//function to add gif
-// function addGif() {
-//     var results = response.data;
+// function to add gif
+function addGif(response) {
     
-//         for (var i = 0; i < limit; i++) {
-//             var activityDiv = $("<div class='activity'>");
-//             var activityImg = $("<img>");
-//             var rating = results[i].rating;  
-//             var p = $("<p>").text("Rating: " + rating);
+    var results = response.data;
+    
+    for (var i = 0; i < limit; i++) {
+        var activityDiv = $("<div class='activity'>");
+        var activityImg = $("<img>");
+        var rating = results[i].rating;  
+        var p = $("<p>").text("Rating: " + rating);
 
-//             activityImg.attr({
-//                 "src": results[i].images.original_still.url,
-//                 "data-still": results[i].images.original_still.url,
-//                 "data-animate": results[i].images.original.url,
-//                 "data-state": "still",
-//                 "class": "gif",
-//             })
+        activityImg.attr({
+            "src": results[i].images.original_still.url,
+            "data-still": results[i].images.original_still.url,
+            "data-animate": results[i].images.original.url,
+            "data-state": "still",
+            "class": "gif",
+        })
 
-//             activityDiv.append(activityImg);
-//             activityDiv.append(p);
-//             $("#gifBox").append(activityDiv);
-//         }  
-// }
+        activityDiv.append(activityImg);
+        activityDiv.append(p);
+        $("#gifBox").append(activityDiv);
+    }  
+}
 
-// //function to play/pause gif
-// function playGif() {
-//     var state = $(this).attr("data-state");
-  
-//     if (state === "still") {
-//         $(this).attr("src", $(this).attr("data-animate"));
-//         $(this).attr("data-state", "animate");
-//     } else {
-//         $(this).attr("src", $(this).attr("data-still"));
-//         $(this).attr("data-state", "still");
-//     }
-// }
-
-//click add to create new buttons
-$("#add").on("click", function(event) {
-    event.preventDefault();
-    newTopic();
-})
-
-//click topic to display gifs
-$(document).on("click", ".activity-btn", displayActivity)
-
-// $(document).on("click", ".activity-btn", function(event) {
-//     //event.preventDefault();
-//     $("#gifBox").empty();
-//     displayActivity();
-// })
-
-//click gif to play/pause
-$(document).on("click", ".gif", function(event) {
-    event.preventDefault();
-    // playGif();
+//function to play/pause gif
+function playGif() {
     var state = $(this).attr("data-state");
   
     if (state === "still") {
@@ -132,8 +88,47 @@ $(document).on("click", ".gif", function(event) {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
     }
+}
+
+//click add to create new buttons
+$("#add").on("click", function(event) {
+    event.preventDefault();
+    newTopic();
 })
 
+//click topic to display gifs
+// $(document).on("click", ".activity-btn", displayActivity)
+
+$(document).on("click", ".activity-btn", function(event) {
+    event.preventDefault();
+    limit = 10;
+    displayActivity(this);
+})
+
+//click to add 10 more gifs
+$(document).on("click", "#showMoreBtn", function(event) {
+    event.preventDefault();
+    $(".showTenMore").empty();
+    limit = limit + 10;
+    displayActivity(this);
+})
+
+//click gif to play/pause
+$(document).on("click", ".gif", playGif);
+
+// $(document).on("click", ".gif", function(event) {
+//     event.preventDefault();
+//     // playGif();
+//     var state = $(this).attr("data-state");
+
+//     if (state === "still") {
+//         $(this).attr("src", $(this).attr("data-animate"));
+//         $(this).attr("data-state", "animate");
+//     } else {
+//         $(this).attr("src", $(this).attr("data-still"));
+//         $(this).attr("data-state", "still");
+//     }
+//     console.log(state);
+// })
+
 topicBtn();
-
-
