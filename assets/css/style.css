@@ -10,27 +10,9 @@ body {
     text-align: center;
     margin-top: 20px;
     width: 100%;
-    background-image: url("../images/mountain.jpg");
+    background-image: url("../images/maxresdefault.jpg");
     background-size: cover;
     border: 2px solid white;
-}
-
-h1 {
-    color: orangered;
-
-    font-weight: bolder;
-    text-shadow: -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
-}
-
-.lead {
-    color: white;
-    text-shadow: -2px -2px 0 green,
-    2px -2px 0 green,
-    -2px 2px 0 green,
-    2px 2px 0 green;
 }
 
 .card {
@@ -39,8 +21,9 @@ h1 {
     padding: 10px;
 }
 
-h4 {
-    margin: 10px;
+.activity-btn {
+    margin: 5px;
+    border: 2px solid black;
 }
 
 .form-group {
@@ -53,22 +36,6 @@ h4 {
     margin-bottom: 20px;
 }
 
-#input, #add {
-    margin: auto;
-}
-
-#input {
-    margin-bottom: 10px;
-}
-.header {
-    padding-top: none;
-    margin-top: none;
-}
-.activity-btn {
-    margin: 5px;
-    border: 2px solid black;
-}
-
 .activity {
     width: 200px;
     margin: 5px;
@@ -76,10 +43,36 @@ h4 {
     padding: 5px;
 }
 
-img {
+.gif {
     border: 2px solid black;
     max-width: 190px;
     padding: 3px;
+    cursor: pointer;
+}
+
+#header {
+    color: orangered;
+    font-weight: bolder;
+    text-shadow: -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+#subheader {
+    color: white;
+    text-shadow: -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0  black,
+    2px 2px 0 black;
+}
+
+#click-instructions {
+    margin: 10px;
+}
+
+#input {
+    margin-bottom: 10px;
 }
 
 #gifBox {
@@ -87,14 +80,4 @@ img {
     flex-wrap: wrap;
     list-style: none;
     max-width: 100%;
-    color
-}
-
-.formButtons {
-    display: flex;
-    float: left;
-}
-
-.newButton {
-    margin-left: 5px;
 }
