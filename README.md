@@ -1,4 +1,4 @@
-# GifTastic
+# Get Outside
 
 This page uses jQuery to grab values from a form and create a button for each value.  When the buttons are clicked, information is pulled from the giphy API and displayed on screen.
 
