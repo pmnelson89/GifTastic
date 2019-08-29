@@ -1,4 +1,4 @@
-# GifTastic
+# Get Outside!
 
 This page uses jQuery to grab values from a form and create a button for each value.  When the buttons are clicked, information is pulled from the giphy API and displayed on screen.
 
@@ -7,3 +7,11 @@ This page uses jQuery to grab values from a form and create a button for each va
 * Submit the topic to create new buttons.
 * Click buttons to display gifs on the screen.
 * Play or pause gifs by clicking on the images.
+
+## Technology
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Giphy API
+* Ajax 
